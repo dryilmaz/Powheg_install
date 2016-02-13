@@ -6,7 +6,7 @@ pwg_inst_main_folder=`pwd`
 ########lhapdf##########################################################
 ########################################################################
 
-echo "lhapdf `time`"
+echo "lhapdf "
 cd $pwg_inst_main_folder/
 wget http://www.hepforge.org/archive/lhapdf/lhapdf-5.8.9.tar.gz
 tar xzf lhapdf-5.8.9.tar.gz
@@ -27,7 +27,7 @@ wget http://www.hepforge.org/archive/lhapdf/pdfsets/current/MSTW2008nlo90cl.LHgr
 #########fastjet##########################################################
 ##########################################################################
 
-echo "fastjet `time`"
+echo "fastjet "
 
 
 cd $pwg_inst_main_folder/
@@ -50,10 +50,10 @@ export LD_LIBRARY_PATH=$pwg_inst_main_folder/lhapdf/lib/:$LD_LIBRARY_PATH
 
 
 
-echo "powheg `time`"
+echo "powheg "
 cd $pwg_inst_main_folder
 # I usually add a subfolder for versioning of powheg here
-svn checkout  --revision 2801 --username anonymous \
+svn checkout  --revision r2246 --username anonymous \
      --password anonymous svn://powhegbox.mib.infn.it/trunk/POWHEG-BOX
 cd POWHEG-BOX/HJJ
 make pwhg_main
